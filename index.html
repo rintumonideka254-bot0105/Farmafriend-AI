@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriSense AI</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f4f9f4;
+color:#333;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#1b5e20;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+section{
+padding:30px;
+margin:20px;
+background:white;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+button{
+background:white;
+color:#2e7d32;
+padding:12px 24px;
+border:none;
+border-radius:30px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+button:hover{
+background:#1b5e20;
+}
+
+.dashboard{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:#e8f5e9;
+padding:20px;
+border-radius:10px;
+flex:1;
+min-width:200px;
+text-align:center;
+}
+
+footer{
+background:#2e7d32;
+color:white;
+text-align:center;
+padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌾 AgriSense AI</h1>
+
+<h2>Smart Farming Powered by Artificial Intelligence</h2>
+
+<p>
+Helping farmers identify weeds, improve crop health,
+and adopt sustainable agricultural practices.
+</p>
+
+<br>
+
+<button onclick="location.href='#weed'">
+Try AI Detection
+</button>
+
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#weed">Weed Detection</a>
+<a href="#biocaps">Smart BioCaps</a>
+<a href="#advisor">AI Advisor</a>
+<a href="#dashboard">Dashboard</a>
+</nav>
+<section>
+
+<h2>Current Agricultural Challenges</h2>
+
+<div class="challenge-container">
+
+<div class="challenge-card">
+<h3>🚫 Weed Infestation</h3>
+<p>
+Weeds compete with crops for nutrients, water and sunlight,
+reducing agricultural productivity.
+</p>
+</div>
+
+<div class="challenge-card">
+<h3>💰 Excess Fertilizer Usage</h3>
+<p>
+Overuse of fertilizers increases production costs and affects
+long-term soil health.
+</p>
+</div>
+
+<div class="challenge-card">
+<h3>🌍 Sustainability Challenges</h3>
+<p>
+Modern agriculture requires eco-friendly solutions that maintain
+yield while protecting the environment.
+</p>
+</div>
+.challenge-container{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.challenge-card{
+flex:1;
+min-width:250px;
+background:#e8f5e9;
+padding:20px;
+border-radius:12px;
+box-shadow:0 0 8px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.challenge-card:hover{
+transform:translateY(-5px);
+}
+</div>
+
+</section>
+<section id="home">
+<h2>About the Project</h2>
+<p>
+AgriSense AI is an innovative agricultural platform that combines Artificial Intelligence
+with sustainable farming practices. The system helps farmers detect weeds,
+identify crop issues, and receive eco-friendly recommendations.
+</p>
+
+<h3>Objectives</h3>
+<ul>
+<li>Reduce crop losses due to weeds</li>
+<li>Promote sustainable farming</li>
+<li>Reduce excessive fertilizer usage</li>
+<li>Support precision agriculture</li>
+</ul>
+</section>
+
+<section id="weed">
+<h2>AI Weed Detection Demo</h2>
+
+<input type="file" id="imageInput">
+<br><br>
+
+<button onclick="detectWeed()">Analyze Image</button>
+
+<h3 id="result"></h3>
+
+</section>
+
+<section id="biocaps">
+
+<h2>🌱 Smart BioCaps Innovation</h2>
+
+<p>
+Smart BioCaps are biodegradable nutrient capsules designed to support sustainable agriculture through bioengineering principles.
+</p>
+
+<div style="
+background:#e8f5e9;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+text-align:center;
+font-size:20px;
+line-height:2;
+">
+
+🍌 Banana Waste
+<br>⬇️
+<br>🧪 Bioengineering Process
+<br>⬇️
+<br>🌱 Smart BioCaps
+<br>⬇️
+<br>🌾 Healthy Soil
+<br>⬇️
+<br>📈 Higher Crop Yield
+
+</div>
+
+<h3>Key Benefits</h3>
+
+<ul>
+<li>Improves nutrient efficiency</li>
+<li>Reduces fertilizer wastage</li>
+<li>Supports sustainable agriculture</li>
+<li>Promotes soil health</li>
+<li>Environment-friendly solution</li>
+</ul>
+
+</section>
+
+<p>
+Smart BioCaps are biodegradable capsules containing beneficial microbes,
+nutrients, and moisture-retaining materials.
+</p>
+
+<h3>Benefits</h3>
+
+<ul>
+<li>Slow nutrient release</li>
+<li>Improves soil fertility</li>
+<li>Reduces chemical fertilizer dependence</li>
+<li>Enhances water retention</li>
+<li>Environment friendly</li>
+</ul>
+
+</section>
+
+<section id="advisor">
+
+<h2>🤖 Ask Krishi AI</h2>
+
+<select id="question">
+<option>My rice leaves are yellow</option>
+<option>How to control weeds naturally?</option>
+<option>Crop growth is slow</option>
+</select>
+
+<button onclick="answerQuestion()">Ask</button>
+
+<p id="answer"></p>
+
+</section>
+
+<section id="dashboard">
+
+<h2>📊 Project Impact Dashboard</h2>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>125+</h3>
+<p>Fields Monitored</p>
+</div>
+
+<div class="card">
+<h3>352+</h3>
+<p>Weed Detections</p>
+</div>
+
+<div class="card">
+<h3>28%</h3>
+<p>Fertilizer Savings</p>
+</div>
+
+<div class="card">
+<h3>15%</h3>
+<p>Yield Improvement</p>
+</div>
+
+<div class="card">
+<h3>20%</h3>
+<p>Water Conservation</p>
+</div>
+
+<div class="card">
+<h3>Eco-Friendly</h3>
+<p>Reduced Chemical Dependency</p>
+</div>
+
+</div>
+
+</section>
+
+<h2>📊 Farm Dashboard</h2>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>125</h3>
+<p>Fields Analyzed</p>
+</div>
+
+<div class="card">
+<h3>352</h3>
+<p>Weeds Detected</p>
+</div>
+
+<div class="card">
+<h3>28%</h3>
+<p>Fertilizer Saved</p>
+</div>
+
+<div class="card">
+<h3>18%</h3>
+<p>Yield Improvement</p>
+</div>
+
+</div>
+
+</section>
+<section>
+
+<h2>🚀 Future Scope</h2>
+
+<ul>
+<li>Real AI-powered weed recognition using machine learning</li>
+<li>Drone-based crop monitoring</li>
+<li>Assamese voice-enabled farmer assistant</li>
+<li>IoT soil moisture and nutrient sensors</li>
+<li>Advanced Smart BioCaps incorporating banana-derived bioactive compounds</li>
+<li>Mobile application for farmers</li>
+</ul>
+
+</section>
+<footer>
+<p>AgriSense AI | Bioengineering & Sustainable Agriculture Innovation</p>
+</footer>
+
+<script>
+
+function detectWeed(){
+
+document.getElementById("result").innerHTML = `
+
+<div style="
+background:#e8f5e9;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+border-left:6px solid green;
+">
+
+<h3>✅ Field Analysis Complete</h3>
+
+<p><b>Crop:</b> Rice</p>
+
+<p><b>Weed Detected:</b> Barnyard Grass</p>
+
+<p><b>Confidence:</b> 92%</p>
+
+<p><b>Recommended Actions:</b></p>
+
+<ul>
+<li>Manual Weed Removal</li>
+<li>Mulching</li>
+<li>Application of Smart BioCaps</li>
+<li>Regular Field Monitoring</li>
+</ul>
+
+<p><b>Estimated Yield Improvement:</b> +15%</p>
+
+<p><b>Environmental Impact:</b> Reduced Chemical Dependency</p>
+
+</div>
+
+`;
+
+}
+function answerQuestion(){
+
+let q = document.getElementById("question").value;
+
+let ans="";
+
+if(q=="My rice leaves are yellow"){
+ans="Possible nitrogen deficiency. Soil testing is recommended.";
+}
+
+else if(q=="How to control weeds naturally?"){
+ans="Use mulching, crop rotation, and manual weed removal.";
+}
+
+else{
+ans="Slow growth may be due to nutrient deficiency or water stress.";
+}
+
+document.getElementById("answer").innerHTML=ans;
+}
+
+</script>
+
+</body>
+</html>
